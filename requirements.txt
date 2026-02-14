@@ -5,3 +5,4 @@ aiofiles
 dnspython
 psutil
 requests
+flask
