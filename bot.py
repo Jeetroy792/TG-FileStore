@@ -1,5 +1,3 @@
-# (c) @TeleRoidGroup || @PredatorHackerzZ
-
 import os
 import asyncio
 import traceback
@@ -386,7 +384,7 @@ async def button(bot: Client, cmd: CallbackQuery):
             except UserNotParticipant:
                 invite_link = await get_invite_link(channel_chat_id)
                 await cmd.message.edit(
-                    text="**I like Your Smartness But Don't Be Oversmart! 😑**\n\n",
+                    text="**Please Join Our Updates Channel to Use this Bot!**\n\n",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
