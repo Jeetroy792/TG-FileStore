@@ -465,5 +465,24 @@ async def button(bot: Client, cmd: CallbackQuery):
         await cmd.answer()
     except QueryIdInvalid: pass
 
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is Running"
+
+def run():
+    app.run(host='0.0.0.0', port=8000)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+# বটের মেইন ফাংশনের ভেতর keep_alive() কল করে দাও
+
+keep_alive()
 
 Bot.run()
