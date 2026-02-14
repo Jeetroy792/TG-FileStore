@@ -27,10 +27,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip3 install --upgrade pip
 RUN pip3 install setuptools wheel yarl multidict
 
+# Force install latest Pyrogram to fix 'enums' import error
+RUN pip3 install -U pyrogram tgcrypto
+
 WORKDIR /app
 COPY requirements.txt .
 
-# Install python dependencies
+# Install other python dependencies
 RUN pip3 install -r requirements.txt
 
 RUN dpkg-reconfigure locales
